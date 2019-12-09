@@ -1176,7 +1176,7 @@ a {
   text-decoration: none;
 }
 .top-bar .cnt-block {
-  float: left;
+  float: right;
 }
 .top-bar .cnt-block .list-inline {
   margin: 0px;
@@ -1271,6 +1271,11 @@ header{background: #fff;}
   border-radius: 10px 0 0 10px;
   padding: 13px;
   width: 65%;
+}
+@media (max-width: 991px) {
+  .main-header .top-search-holder .search-area .categories-filter {
+    display: none!important;
+  }
 }
 .main-header .top-search-holder .search-area .categories-filter {
   border-right: 1px solid #cdeef1;
@@ -3334,7 +3339,7 @@ footer .newsletter-row .col1 {
     margin-bottom:0px;
     display: block;
     padding: 0px;
-    font-family:'Mouse Memoirs', sans-serif;
+    font-family: sans-serif;
     font-size: 26px;
     letter-spacing: 0px;
     font-weight: 300;
@@ -3346,7 +3351,7 @@ footer .newsletter-row .col1 {
     margin-bottom: 23px;
     display: block;
     padding: 0px;
-     font-family:'Mouse Memoirs', sans-serif;
+     font-family: sans-serif;
     font-size: 42px;
     letter-spacing: 1px;
     font-weight: 400;
