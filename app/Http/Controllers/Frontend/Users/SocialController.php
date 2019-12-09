@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Services\SocialAccountService;
 use Illuminate\Support\Facades\Log;
 use Socialite;
+use Illuminate\Support\Facades\Auth;
 use App\Services\UserService;
 
 class SocialController extends Controller
@@ -24,9 +25,10 @@ class SocialController extends Controller
 
     public function callback($provider)
     {
-        $getInfo = Socialite::driver($provider)->user();
-        $user = $this->userService->loginFacebook($getInfo, $provider);
-        auth()->login($user);
-        return redirect()->to('/');
+        $userInfo = Socialite::driver($provider)->user();
+        $user = $this->userService->loginFacebook($userInfo, $provider);
+        Auth::login($user);
+        
+        return redirect()->route('home-page');
     }
 }
