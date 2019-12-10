@@ -1,0 +1,50 @@
+#login-modal .modal-body {
+    display: flex;
+    flex-direction: column;
+}
+#login-modal .modal-dialog {
+    top: 30%;
+}
+#login-modal .modal-content {
+    width: 80%;
+    height: auto;
+}
+#login-modal .modal-body .modal-body-item {
+    margin-top: 5%
+}
+#login-modal .modal-body .login-btn {
+    display: inline-block;
+    color: #fff;
+}
+#login-modal .modal-body .login-facebook:hover {
+    color:   rgb(75, 143, 232);
+}
+#login-modal .modal-body .login-google:hover {
+    color: #ff6868;
+}
+#login-modal .login-facebook {
+    background-color: rgb(75, 143, 232);
+}
+#login-modal .login-facebook:hover {
+    background: #fff;
+    border: 1px solid rgb(75, 143, 232);
+}
+#login-modal .login-google {
+    background-color: #ff6868;
+}
+#login-modal .login-google:hover {
+    background-color: #fff;
+    border: 1px solid #ff6868;
+}
+#login-modal .modal-body span {
+    text-align: center;
+    font-size: 14px;
+}
+#login-modal .logo-modal {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #8080803d;
+}
+#login-modal .logo-modal img {
+    width: 55%;
+}

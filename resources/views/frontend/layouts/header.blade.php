@@ -26,17 +26,16 @@
                         @guest
                             <div class="cnt-account">
                                 <ul class="list-unstyled">
-                                    <li><a href="{{ route('user.sign-up') }}"><i class="icon fa fa-plus"></i>Đăng ký</a></li>
-                                    <li><a href="javascript:void(0)"> | </a></li>
-                                    <li><a href="{{ route('user.sign-in') }}"><i class="icon fa fa-sign-in"></i>Đăng nhập</a></li>  
+                                    <li class="js-show-login-modal" data-toggle="modal" data-target="#login-modal"><a href="javascript:void(0)"><i class="icon fa fa-sign-in"></i>Đăng nhập</a></li>  
                                 </ul>
                             </div>
+                            @include('frontend.layouts.login-modal')
                         @endguest
                         @auth
                             <div class="cnt-block">
                                 <ul class="list-unstyled list-inline">
                                     <li class="dropdown dropdown-small"> <a href="javascript:void(0)" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">
-                                        <span class="value">{{ Auth::user()->name }}</span><b class="caret"></b></a>
+                                        <span class="value">{{ Auth::user()->name ?? '' }}</span><b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li><a href="{{ route('user.sign-out') }}"> Đăng xuất</a></li>
                                         </ul>
@@ -57,17 +56,17 @@
         <div class="main-header">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
+                    <div class="col-xs-12 col-sm-12 col-md-6 logo-holder">
                         <!-- ============================================================= LOGO ============================================================= -->
                         <div class="logo">
-                            <a href="{{ route('home-page') }}"> <img src="{{ asset('minify/images/logo.png') }}" alt="{{ config('app.name') }}"> </a>
+                            <a href="{{ route('home-page') }}"> <img src="{{ asset('minify/images/logo1.png') }}" alt="{{ config('app.name') }}"> </a>
                         </div>
                         <!-- /.logo -->
                         <!-- ============================================================= LOGO : END ============================================================= -->
                     </div>
                     <!-- /.logo-holder -->
 
-                    <div class="col-xs-12 col-sm-8 col-md-6 top-search-holder">
+                    <div class="col-xs-12 col-sm-12 col-md-6 top-search-holder">
                         <!-- /.contact-row -->
                         <!-- ============================================================= SEARCH AREA ============================================================= -->
                         <div class="search-area">

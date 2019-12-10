@@ -24,6 +24,7 @@ mix.styles([
         'public/un-minify/css/quicksand.google.css',
         'public/un-minify/css/open_sand.google.css',
         'public/un-minify/css/mouse_memoirs.google.css',
+        'public/un-minify/css/login.css',
     ], 'public/minify/css/frontend.min.css')
     .combine([
         'public/un-minify/js/jquery-1.11.1.min.js',
