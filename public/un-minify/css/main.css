@@ -6780,3 +6780,24 @@ z-index:10000
     padding: 5px 0px;
 }
 }
+@media (width: 1024px), (width: 768px) {
+    .main-header .logo img {
+        width: 50%!important;
+    }
+}
+@media (width: 768px) {
+    .main-header .top-search-holder .search-area .search-button {
+        line-height: 42px;
+    }
+}
+
+@media (width: 1024px) {
+    .main-header .top-search-holder .search-area .search-button {
+        line-height: 52px;
+    }
+}
+@media (max-width: 991px) {
+    .main-header .logo img {
+        width: 100%;
+    }
+}

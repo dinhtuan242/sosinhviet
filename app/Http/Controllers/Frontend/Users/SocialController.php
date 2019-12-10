@@ -26,9 +26,16 @@ class SocialController extends Controller
     public function callback($provider)
     {
         $userInfo = Socialite::driver($provider)->user();
-        $user = $this->userService->loginFacebook($userInfo, $provider);
-        Auth::login($user);
+        $user = $this->userService->signIn($userInfo, $provider);
+        Auth::login($user, true);
         
+        return redirect()->route('home-page');
+    }
+
+    public function signOut()
+    {
+        Auth::logout();
+
         return redirect()->route('home-page');
     }
 }

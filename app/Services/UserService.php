@@ -13,7 +13,7 @@ class UserService
         $this->user = $user;
     }
 
-    public function loginFacebook($param, $provider)
+    public function signIn($param, $provider)
     {
         $user = User::where('provider_id', $param->id)->first();
         if (!$user) {

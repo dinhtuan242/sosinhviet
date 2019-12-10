@@ -12,8 +12,6 @@
 */
 
 Route::get('', 'Frontend\Home\HomePageController@main')->name('home-page');
-Route::get('dang-nhap', 'Frontend\Users\AccountController@signIn')->name('user.sign-in');
-Route::get('dang-ky', 'Frontend\Users\AccountController@signUp')->name('user.sign-up');
-Route::get('dang-xuat', 'Frontend\Users\AccountController@signOut')->name('user.sign-out');
+Route::get('dang-xuat', 'Frontend\Users\SocialController@signOut')->name('user.sign-out');
 Route::get('/auth/redirect/{provider}', 'Frontend\Users\SocialController@redirect');
 Route::get('/callback/{provider}', 'Frontend\Users\SocialController@callback');

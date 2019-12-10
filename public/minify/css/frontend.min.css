@@ -6785,6 +6785,27 @@ z-index:10000
     padding: 5px 0px;
 }
 }
+@media (width: 1024px), (width: 768px) {
+    .main-header .logo img {
+        width: 50%!important;
+    }
+}
+@media (width: 768px) {
+    .main-header .top-search-holder .search-area .search-button {
+        line-height: 42px;
+    }
+}
+
+@media (width: 1024px) {
+    .main-header .top-search-holder .search-area .search-button {
+        line-height: 52px;
+    }
+}
+@media (max-width: 991px) {
+    .main-header .logo img {
+        width: 100%;
+    }
+}
 
 
 /*===================================================================================*/
@@ -10379,4 +10400,55 @@ Copyright (c) 2014 Daniel Eden
   font-weight: 400;
   src: local('Mouse Memoirs'), local('MouseMemoirs-Regular'), url(https://fonts.gstatic.com/s/mousememoirs/v7/t5tmIRoSNJ-PH0WNNgDYxdSb3T7Prw.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+#login-modal .modal-body {
+    display: flex;
+    flex-direction: column;
+}
+#login-modal .modal-dialog {
+    top: 30%;
+}
+#login-modal .modal-content {
+    width: 80%;
+    height: auto;
+}
+#login-modal .modal-body .modal-body-item {
+    margin-top: 5%
+}
+#login-modal .modal-body .login-btn {
+    display: inline-block;
+    color: #fff;
+}
+#login-modal .modal-body .login-facebook:hover {
+    color:   rgb(75, 143, 232);
+}
+#login-modal .modal-body .login-google:hover {
+    color: #ff6868;
+}
+#login-modal .login-facebook {
+    background-color: rgb(75, 143, 232);
+}
+#login-modal .login-facebook:hover {
+    background: #fff;
+    border: 1px solid rgb(75, 143, 232);
+}
+#login-modal .login-google {
+    background-color: #ff6868;
+}
+#login-modal .login-google:hover {
+    background-color: #fff;
+    border: 1px solid #ff6868;
+}
+#login-modal .modal-body span {
+    text-align: center;
+    font-size: 14px;
+}
+#login-modal .logo-modal {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #8080803d;
+}
+#login-modal .logo-modal img {
+    width: 55%;
 }
