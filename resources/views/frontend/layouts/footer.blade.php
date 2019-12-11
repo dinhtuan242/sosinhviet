@@ -1,31 +1,5 @@
 <!-- ============================================================= FOOTER ============================================================= -->
 <footer id="footer" class="footer color-bg">
-    <div class="newsletter-row">
-        <div class="container">
-            <div class="row">
-
-                <!-- Footer Newsletter -->
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col1">
-                    <div class="newsletter-wrap">
-                        <h5>Nhận email</h5>
-                        <h4>Đăng ký nhận email khi có khuyến mãi mới</h4>
-                        <form action="#" method="post" id="newsletter-validate-detail1">
-                            <div id="container_form_news">
-                                <div id="container_form_news2">
-                                    <input type="text" name="email" id="newsletter1" title="Đăng ký nhận email" class="input-text required-entry validate-email" placeholder="Nhập vào email của bạn">
-                                    <button type="submit" title="Đăng ký" class="button subscribe"><span>Đăng ký</span></button>
-                                </div>
-                                <!--container_form_news2-->
-                            </div>
-                            <!--container_form_news-->
-                        </form>
-                    </div>
-                    <!--newsletter-wrap-->
-                </div>
-            </div>
-        </div>
-        <!--footer-column-last-->
-    </div>
     <div class="footer-bottom">
         <div class="container">
             <div class="row">
