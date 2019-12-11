@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class SubcribeEmail extends Model
 {
     protected $fillable = [
-        'email', 'isSubcribe',
+        'email',
+        'isSubcribe',
+        'created_at',
+        'updated_at',
     ];
 }
