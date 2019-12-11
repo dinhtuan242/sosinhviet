@@ -11,6 +11,7 @@
     <meta name="keywords" content="{{ config('detail.keywords') }}">
     <meta name="robots" content="all">
     <title>{{ config('app.name') }}</title>
+    <link rel="shortcut icon" href="{{ asset('minify/images/favicon.png') }}">
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{{ asset('minify/css/frontend.min.css') }}">
 </head>
@@ -59,7 +60,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-6 logo-holder">
                         <!-- ============================================================= LOGO ============================================================= -->
                         <div class="logo">
-                            <a href="{{ route('home-page') }}"> <img src="{{ asset('minify/images/logo1.png') }}" alt="{{ config('app.name') }}"> </a>
+                            <a href="{{ route('home-page') }}"> <img src="{{ asset('minify/images/logo.png') }}" alt="{{ config('app.name') }}"> </a>
                         </div>
                         <!-- /.logo -->
                         <!-- ============================================================= LOGO : END ============================================================= -->
@@ -99,14 +100,14 @@
                 <div class="yamm navbar navbar-default" role="navigation">
                     <div class="navbar-header">
                         <button data-target="#mc-horizontal-menu-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
-                            <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                            <span class="sr-only">Menu</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                     </div>
                     <div class="nav-bg-class">
                         <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
                             <div class="nav-outer">
                                 <ul class="nav navbar-nav">
                                     <li class="@if(Route::currentRouteName() == 'home-page') active @endif dropdown yamm-fw"> <a href="{{ route('home-page') }}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-home"></i> Trang chủ</a> </li>
-                                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Pages</a>
+                                    <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Pages</a>
                                         <ul class="dropdown-menu pages">
                                             <li>
                                                 <div class="yamm-content">

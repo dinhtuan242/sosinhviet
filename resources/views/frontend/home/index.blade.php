@@ -3,49 +3,21 @@
     <div class="body-content" id="top-banner-and-menu">
         <div id="hero">
             <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
-                <div class="item" style="background-image: url(assets/images/sliders/01.jpg);">
+                <div class="item" style="background-image: url({{ asset('minify/images/sliders/01.jpg') }});">
                     <div class="container">
                         <div class="caption bg-color vertical-center text-left">
                             <div class="slider-header fadeInDown-1">Top brands 2018</div>
                             <div class="big-text fadeInDown-1"> Boys fashion </div>
                             <div class="excerpt fadeInDown-2 hidden-xs"> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span> </div>
-                            <div class="button-holder fadeInDown-3"> <a href="index.php?page=single-product" class="btn-lg btn btn-uppercase btn-primary shop-now-button">Shop Now</a> </div>
+                            <div class="button-holder fadeInDown-3"> <a href="javascript:void(0)" class="btn-lg btn btn-uppercase btn-primary shop-now-button">Shop Now</a> </div>
                         </div>
                         <!-- /.caption -->
                     </div>
                     <!-- /.container-fluid -->
                 </div>
                 <!-- /.item -->
-
-                <div class="item" style="background-image: url(assets/images/sliders/02.jpg);">
-                    <div class="container">
-                        <div class="caption bg-color vertical-center text-left">
-                            <div class="slider-header fadeInDown-1">Spring collection 2018</div>
-                            <div class="big-text fadeInDown-1">Childrens world </div>
-                            <div class="excerpt fadeInDown-2 hidden-xs"> <span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur.</span> </div>
-                            <div class="button-holder fadeInDown-3"> <a href="index.php?page=single-product" class="btn-lg btn btn-uppercase btn-primary shop-now-button">Shop Now</a> </div>
-                        </div>
-                        <!-- /.caption -->
-                    </div>
-                    <!-- /.container-fluid -->
-                </div>
-                <!-- /.item -->
-
             </div>
             <!-- /.owl-carousel -->
-        </div>
-        <div class="container home-banner1">
-            <div class="row row-bottom">
-                <div class="col-sm-4 col-xs-12 col-md-4">
-                    <a class="btn btn-call btn-bottom" href="tel:0800 622 6225">Call Us</a>
-                </div>
-                <div class="col-sm-4 col-xs-12 col-md-4">
-                    <a class="btn btn-email btn-bottom" href="mailto:smdknitting@smdknitting.com">Email Us</a>
-                </div>
-                <div class="col-sm-4 col-xs-12 col-md-4">
-                    <a class="btn btn-chat btn-bottom" href="#">Chat With Us</a>
-                </div>
-            </div>
         </div>
         <div class="container">
             <!-- ============================================== BRANDS CAROUSEL ============================================== -->
@@ -53,52 +25,52 @@
                 <div class="logo-slider-inner">
                     <div id="brand-slider" class="owl-carousel brand-slider custom-carousel owl-theme">
                         <div class="item m-t-15">
-                            <a href="#" class="image"> <img data-echo="assets/images/brands/brand1.png" alt=""> </a>
+                            <a href="#" class="image"> <img data-echo="{{ asset('minify/images/brands/brand1.png') }}" alt=""> </a>
                         </div>
                         <!--/.item-->
 
                         <div class="item m-t-10">
-                            <a href="#" class="image"> <img data-echo="assets/images/brands/brand2.png" alt=""> </a>
+                            <a href="#" class="image"> <img data-echo="{{ asset('minify/images/brands/brand2.png') }}" alt=""> </a>
                         </div>
                         <!--/.item-->
 
                         <div class="item">
-                            <a href="#" class="image"> <img data-echo="assets/images/brands/brand3.png" alt=""> </a>
+                            <a href="#" class="image"> <img data-echo="{{ asset('minify/images/brands/brand3.png') }}" alt=""> </a>
                         </div>
                         <!--/.item-->
 
                         <div class="item">
-                            <a href="#" class="image"> <img data-echo="assets/images/brands/brand4.png" alt=""> </a>
+                            <a href="#" class="image"> <img data-echo="{{ asset('minify/images/brands/brand4.png') }}" alt=""> </a>
                         </div>
                         <!--/.item-->
 
                         <div class="item">
-                            <a href="#" class="image"> <img data-echo="assets/images/brands/brand5.png" alt=""> </a>
+                            <a href="#" class="image"> <img data-echo="{{ asset('minify/images/brands/brand5.png') }}" alt=""> </a>
                         </div>
                         <!--/.item-->
 
                         <div class="item">
-                            <a href="#" class="image"> <img data-echo="assets/images/brands/brand6.png" alt=""> </a>
+                            <a href="#" class="image"> <img data-echo="{{ asset('minify/images/brands/brand6.png') }}" alt=""> </a>
                         </div>
                         <!--/.item-->
 
                         <div class="item">
-                            <a href="#" class="image"> <img data-echo="assets/images/brands/brand2.png" alt=""> </a>
+                            <a href="#" class="image"> <img data-echo="{{ asset('minify/images/brands/brand2.png') }}" alt=""> </a>
                         </div>
                         <!--/.item-->
 
                         <div class="item">
-                            <a href="#" class="image"> <img data-echo="assets/images/brands/brand4.png" alt=""> </a>
+                            <a href="#" class="image"> <img data-echo="{{ asset('minify/images/brands/brand4.png') }}" alt=""> </a>
                         </div>
                         <!--/.item-->
 
                         <div class="item">
-                            <a href="#" class="image"> <img data-echo="assets/images/brands/brand1.png" alt=""> </a>
+                            <a href="#" class="image"> <img data-echo="{{ asset('minify/images/brands/brand1.png') }}" alt=""> </a>
                         </div>
                         <!--/.item-->
 
                         <div class="item">
-                            <a href="#" class="image"> <img data-echo="assets/images/brands/brand5.png" alt=""> </a>
+                            <a href="#" class="image"> <img data-echo="{{ asset('minify/images/brands/brand5.png') }}" alt=""> </a>
                         </div>
                         <!--/.item-->
                     </div>
@@ -119,9 +91,10 @@
                             <div class="item">
                                 <div class="products">
                                     <div class="hot-deal-wrapper">
-                                        <div class="image"> <img src="assets/images/hot-deals/p25.jpg" alt=""> </div>
-                                        <div class="sale-offer-tag"><span>49%<br>
-                            off</span></div>
+                                        <div class="image"> <img src="{{ asset('minify/images/hot-deals/p25.jpg') }}" alt=""> </div>
+                                        <div class="sale-offer-tag">
+                                            <span>49%<br>off</span>
+                                        </div>
                                         <div class="timing-wrapper">
                                             <div class="box-wrapper">
                                                 <div class="date box"> <span class="key">120</span> <span class="value">DAYS</span> </div>
@@ -163,7 +136,7 @@
                             <div class="item">
                                 <div class="products">
                                     <div class="hot-deal-wrapper">
-                                        <div class="image"> <img src="assets/images/hot-deals/p5.jpg" alt=""> </div>
+                                        <div class="image"> <img src="{{ asset('minify/images/hot-deals/p5.jpg') }}" alt=""> </div>
                                         <div class="sale-offer-tag"><span>35%<br>
                             off</span></div>
                                         <div class="timing-wrapper">
@@ -207,7 +180,7 @@
                             <div class="item">
                                 <div class="products">
                                     <div class="hot-deal-wrapper">
-                                        <div class="image"> <img src="assets/images/hot-deals/p10.jpg" alt=""> </div>
+                                        <div class="image"> <img src="{{ asset('minify/images/hot-deals/p10.jpg') }}" alt=""> </div>
                                         <div class="sale-offer-tag"><span>35%<br>
                             off</span></div>
                                         <div class="timing-wrapper">
@@ -255,7 +228,7 @@
                 </div>
                 <div class="col-lg-7 col-md-67 col-sm-7 col-xs-12">
                     <div class="box1 box-category box-category-wide">
-                        <div class="full-link box-category-image transition" style="background-image:url(assets/images/banners/banner1.jpg);"></div>
+                        <div class="full-link box-category-image transition" style="background-image:url({{ asset('minify/images/banners/banner1.jpg') }});"></div>
                         <div class="full-link1">
                             <h3>Winter Sale</h3>
                             <a href="#" class="btn-link1">Buy Now</a>
@@ -265,14 +238,14 @@
                     <div class="row">
                         <div class="col col-sm-6">
                             <div class="box1 box-category">
-                                <div class="full-link box-category-image transition" style="background-image:url(assets/images/banners/banner2.jpg);"></div>
+                                <div class="full-link box-category-image transition" style="background-image:url({{ asset('minify/images/banners/banner2.jpg') }});"></div>
                                 <span class="btn btn-default">Shop Now</span>
                                 <a href="#" class="full-link"></a>
                             </div>
                         </div>
                         <div class="col col-sm-6">
                             <div class="box1 box-category">
-                                <div class="full-link box-category-image transition" style="background-image:url(assets/images/banners/banner3.jpg);"></div>
+                                <div class="full-link box-category-image transition" style="background-image:url({{ asset('minify/images/banners/banner3.jpg') }});"></div>
                                 <span class="btn btn-default">Shop Now</span>
                                 <a href="#" class="full-link"></a>
                             </div>
@@ -335,7 +308,7 @@
                                         <div class="product">
                                             <div class="product-image">
                                                 <div class="image">
-                                                    <a href="detail.html"><img src="assets/images/products/p1.jpg" alt=""></a>
+                                                    <a href="detail.html"><img src="{{ asset('minify/images/products/p1.jpg') }}" alt=""></a>
                                                 </div>
                                                 <!-- /.image -->
 
@@ -383,7 +356,7 @@
                                         <div class="product">
                                             <div class="product-image">
                                                 <div class="image">
-                                                    <a href="detail.html"><img src="assets/images/products/p2.jpg" alt=""></a>
+                                                    <a href="detail.html"><img src="{{ asset('minify/images/products/p2.jpg') }}" alt=""></a>
                                                 </div>
                                                 <!-- /.image -->
 
@@ -431,7 +404,7 @@
                                         <div class="product">
                                             <div class="product-image">
                                                 <div class="image">
-                                                    <a href="detail.html"><img src="assets/images/products/p4.jpg" alt=""></a>
+                                                    <a href="detail.html"><img src="{{ asset('minify/images/products/p4.jpg') }}" alt=""></a>
                                                 </div>
                                                 <!-- /.image -->
 
@@ -479,7 +452,7 @@
                                         <div class="product">
                                             <div class="product-image">
                                                 <div class="image">
-                                                    <a href="detail.html"><img src="assets/images/products/p3.jpg" alt=""></a>
+                                                    <a href="detail.html"><img src="{{ asset('minify/images/products/p3.jpg') }}" alt=""></a>
                                                 </div>
                                                 <!-- /.image -->
 
@@ -527,7 +500,7 @@
                                         <div class="product">
                                             <div class="product-image">
                                                 <div class="image">
-                                                    <a href="detail.html"><img src="assets/images/products/p30.jpg" alt=""></a>
+                                                    <a href="detail.html"><img src="{{ asset('minify/images/products/p30.jpg') }}" alt=""></a>
                                                 </div>
                                                 <!-- /.image -->
 
@@ -575,7 +548,7 @@
                                         <div class="product">
                                             <div class="product-image">
                                                 <div class="image">
-                                                    <a href="detail.html"><img src="assets/images/products/p29.jpg" alt=""></a>
+                                                    <a href="detail.html"><img src="{{ asset('minify/images/products/p29.jpg') }}" alt=""></a>
                                                 </div>
                                                 <!-- /.image -->
 
@@ -632,7 +605,7 @@
                                         <div class="product">
                                             <div class="product-image">
                                                 <div class="image">
-                                                    <a href="detail.html"><img src="assets/images/products/p5.jpg" alt=""></a>
+                                                    <a href="detail.html"><img src="{{ asset('minify/images/products/p5.jpg') }}" alt=""></a>
                                                 </div>
                                                 <!-- /.image -->
 
@@ -680,7 +653,7 @@
                                         <div class="product">
                                             <div class="product-image">
                                                 <div class="image">
-                                                    <a href="detail.html"><img src="assets/images/products/p6.jpg" alt=""></a>
+                                                    <a href="detail.html"><img src="{{ asset('minify/images/products/p6.jpg') }}" alt=""></a>
                                                 </div>
                                                 <!-- /.image -->
 
@@ -728,7 +701,7 @@
                                         <div class="product">
                                             <div class="product-image">
                                                 <div class="image">
-                                                    <a href="detail.html"><img src="assets/images/products/p7.jpg" alt=""></a>
+                                                    <a href="detail.html"><img src="{{ asset('minify/images/products/p7.jpg') }}" alt=""></a>
                                                 </div>
                                                 <!-- /.image -->
 
@@ -776,7 +749,7 @@
                                         <div class="product">
                                             <div class="product-image">
                                                 <div class="image">
-                                                    <a href="detail.html"><img src="assets/images/products/p8.jpg" alt=""></a>
+                                                    <a href="detail.html"><img src="{{ asset('minify/images/products/p8.jpg') }}" alt=""></a>
                                                 </div>
                                                 <!-- /.image -->
 
@@ -824,7 +797,7 @@
                                         <div class="product">
                                             <div class="product-image">
                                                 <div class="image">
-                                                    <a href="detail.html"><img src="assets/images/products/p9.jpg" alt=""></a>
+                                                    <a href="detail.html"><img src="{{ asset('minify/images/products/p9.jpg') }}" alt=""></a>
                                                 </div>
                                                 <!-- /.image -->
 
@@ -872,7 +845,7 @@
                                         <div class="product">
                                             <div class="product-image">
                                                 <div class="image">
-                                                    <a href="detail.html"><img src="assets/images/products/p10.jpg" alt=""></a>
+                                                    <a href="detail.html"><img src="{{ asset('minify/images/products/p10.jpg') }}" alt=""></a>
                                                 </div>
                                                 <!-- /.image -->
 
@@ -929,7 +902,7 @@
                                         <div class="product">
                                             <div class="product-image">
                                                 <div class="image">
-                                                    <a href="detail.html"><img src="assets/images/products/p11.jpg" alt=""></a>
+                                                    <a href="detail.html"><img src="{{ asset('minify/images/products/p11.jpg') }}" alt=""></a>
                                                 </div>
                                                 <!-- /.image -->
 
@@ -977,7 +950,7 @@
                                         <div class="product">
                                             <div class="product-image">
                                                 <div class="image">
-                                                    <a href="detail.html"><img src="assets/images/products/p12.jpg" alt=""></a>
+                                                    <a href="detail.html"><img src="{{ asset('minify/images/products/p12.jpg') }}" alt=""></a>
                                                 </div>
                                                 <!-- /.image -->
 
@@ -1025,7 +998,7 @@
                                         <div class="product">
                                             <div class="product-image">
                                                 <div class="image">
-                                                    <a href="detail.html"><img src="assets/images/products/p13.jpg" alt=""></a>
+                                                    <a href="detail.html"><img src="{{ asset('minify/images/products/p13.jpg') }}" alt=""></a>
                                                 </div>
                                                 <!-- /.image -->
 
@@ -1073,7 +1046,7 @@
                                         <div class="product">
                                             <div class="product-image">
                                                 <div class="image">
-                                                    <a href="detail.html"><img src="assets/images/products/p14.jpg" alt=""></a>
+                                                    <a href="detail.html"><img src="{{ asset('minify/images/products/p14.jpg') }}" alt=""></a>
                                                 </div>
                                                 <!-- /.image -->
 
@@ -1121,7 +1094,7 @@
                                         <div class="product">
                                             <div class="product-image">
                                                 <div class="image">
-                                                    <a href="detail.html"><img src="assets/images/products/p15.jpg" alt="image"></a>
+                                                    <a href="detail.html"><img src="{{ asset('minify/images/products/p15.jpg') }}" alt="image"></a>
                                                 </div>
                                                 <!-- /.image -->
 
@@ -1169,7 +1142,7 @@
                                         <div class="product">
                                             <div class="product-image">
                                                 <div class="image">
-                                                    <a href="detail.html"><img src="assets/images/products/p16.jpg" alt=""></a>
+                                                    <a href="detail.html"><img src="{{ asset('minify/images/products/p16.jpg') }}" alt=""></a>
                                                 </div>
                                                 <!-- /.image -->
 
@@ -1226,7 +1199,7 @@
                                         <div class="product">
                                             <div class="product-image">
                                                 <div class="image">
-                                                    <a href="detail.html"><img src="assets/images/products/p18.jpg" alt=""></a>
+                                                    <a href="detail.html"><img src="{{ asset('minify/images/products/p18.jpg') }}" alt=""></a>
                                                 </div>
                                                 <!-- /.image -->
 
@@ -1274,7 +1247,7 @@
                                         <div class="product">
                                             <div class="product-image">
                                                 <div class="image">
-                                                    <a href="detail.html"><img src="assets/images/products/p18.jpg" alt=""></a>
+                                                    <a href="detail.html"><img src="{{ asset('minify/images/products/p18.jpg') }}" alt=""></a>
                                                 </div>
                                                 <!-- /.image -->
 
@@ -1322,7 +1295,7 @@
                                         <div class="product">
                                             <div class="product-image">
                                                 <div class="image">
-                                                    <a href="detail.html"><img src="assets/images/products/p17.jpg" alt=""></a>
+                                                    <a href="detail.html"><img src="{{ asset('minify/images/products/p17.jpg') }}" alt=""></a>
                                                 </div>
                                                 <!-- /.image -->
 
@@ -1370,7 +1343,7 @@
                                         <div class="product">
                                             <div class="product-image">
                                                 <div class="image">
-                                                    <a href="detail.html"><img src="assets/images/products/p16.jpg" alt=""></a>
+                                                    <a href="detail.html"><img src="{{ asset('minify/images/products/p16.jpg') }}" alt=""></a>
                                                 </div>
                                                 <!-- /.image -->
 
@@ -1418,7 +1391,7 @@
                                         <div class="product">
                                             <div class="product-image">
                                                 <div class="image">
-                                                    <a href="detail.html"><img src="assets/images/products/p13.jpg" alt=""></a>
+                                                    <a href="detail.html"><img src="{{ asset('minify/images/products/p13.jpg') }}" alt=""></a>
                                                 </div>
                                                 <!-- /.image -->
 
@@ -1466,7 +1439,7 @@
                                         <div class="product">
                                             <div class="product-image">
                                                 <div class="image">
-                                                    <a href="detail.html"><img src="assets/images/products/p14.jpg" alt=""></a>
+                                                    <a href="detail.html"><img src="{{ asset('minify/images/products/p14.jpg') }}" alt=""></a>
                                                 </div>
                                                 <!-- /.image -->
 
@@ -1526,7 +1499,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="wide-banner cnt-strip">
-                            <div class="image"> <img class="img-responsive" src="assets/images/banners/home-banner.jpg" alt=""> </div>
+                            <div class="image"> <img class="img-responsive" src="{{ asset('minify/images/banners/home-banner.jpg') }}" alt=""> </div>
                             <div class="strip strip-text">
                                 <div class="strip-inner">
                                     <h2 class="text-right">New Childrens Fashion
@@ -1559,7 +1532,7 @@
                                 <div class="product">
                                     <div class="product-image">
                                         <div class="image">
-                                            <a href="detail.html"><img src="assets/images/products/p5.jpg" alt=""></a>
+                                            <a href="detail.html"><img src="{{ asset('minify/images/products/p5.jpg') }}" alt=""></a>
                                         </div>
                                         <!-- /.image -->
 
@@ -1607,7 +1580,7 @@
                                 <div class="product">
                                     <div class="product-image">
                                         <div class="image">
-                                            <a href="detail.html"><img src="assets/images/products/p6.jpg" alt=""></a>
+                                            <a href="detail.html"><img src="{{ asset('minify/images/products/p6.jpg') }}" alt=""></a>
                                         </div>
                                         <!-- /.image -->
 
@@ -1655,7 +1628,7 @@
                                 <div class="product">
                                     <div class="product-image">
                                         <div class="image">
-                                            <a href="detail.html"><img src="assets/images/blank.gif" data-echo="assets/images/products/p7.jpg" alt=""></a>
+                                            <a href="detail.html"><img src="{{ asset('minify/images/blank.gif') }}" data-echo="{{ asset('minify/images/products/p7.jpg') }}" alt=""></a>
                                         </div>
                                         <!-- /.image -->
 
@@ -1703,7 +1676,7 @@
                                 <div class="product">
                                     <div class="product-image">
                                         <div class="image">
-                                            <a href="detail.html"><img src="assets/images/products/p8.jpg" alt=""></a>
+                                            <a href="detail.html"><img src="{{ asset('minify/images/products/p8.jpg') }}" alt=""></a>
                                         </div>
                                         <!-- /.image -->
 
@@ -1751,7 +1724,7 @@
                                 <div class="product">
                                     <div class="product-image">
                                         <div class="image">
-                                            <a href="detail.html"><img src="assets/images/products/p9.jpg" alt=""></a>
+                                            <a href="detail.html"><img src="{{ asset('minify/images/products/p9.jpg') }}" alt=""></a>
                                         </div>
                                         <!-- /.image -->
 
@@ -1799,7 +1772,7 @@
                                 <div class="product">
                                     <div class="product-image">
                                         <div class="image">
-                                            <a href="detail.html"><img src="assets/images/products/p10.jpg" alt=""></a>
+                                            <a href="detail.html"><img src="{{ asset('minify/images/products/p10.jpg') }}" alt=""></a>
                                         </div>
                                         <!-- /.image -->
 
@@ -1862,7 +1835,7 @@
                                     <div class="blog-post">
                                         <div class="blog-post-image">
                                             <div class="image">
-                                                <a href="blog.html"><img src="assets/images/blog-post/post1.jpg" alt=""></a>
+                                                <a href="blog.html"><img src="{{ asset('minify/images/blog-post/post1.jpg') }}" alt=""></a>
                                             </div>
                                         </div>
                                         <!-- /.blog-post-image -->
@@ -1883,7 +1856,7 @@
                                     <div class="blog-post">
                                         <div class="blog-post-image">
                                             <div class="image">
-                                                <a href="blog.html"><img src="assets/images/blog-post/post2.jpg" alt=""></a>
+                                                <a href="blog.html"><img src="{{ asset('minify/images/blog-post/post2.jpg') }}" alt=""></a>
                                             </div>
                                         </div>
                                         <!-- /.blog-post-image -->
@@ -1906,7 +1879,7 @@
                                     <div class="blog-post">
                                         <div class="blog-post-image">
                                             <div class="image">
-                                                <a href="blog.html"><img src="assets/images/blog-post/post1.jpg" alt=""></a>
+                                                <a href="blog.html"><img src="{{ asset('minify/images/blog-post/post1.jpg') }}" alt=""></a>
                                             </div>
                                         </div>
                                         <!-- /.blog-post-image -->
@@ -1927,7 +1900,7 @@
                                     <div class="blog-post">
                                         <div class="blog-post-image">
                                             <div class="image">
-                                                <a href="blog.html"><img src="assets/images/blog-post/post2.jpg" alt=""></a>
+                                                <a href="blog.html"><img src="{{ asset('minify/images/blog-post/post2.jpg') }}" alt=""></a>
                                             </div>
                                         </div>
                                         <!-- /.blog-post-image -->
@@ -1948,7 +1921,7 @@
                                     <div class="blog-post">
                                         <div class="blog-post-image">
                                             <div class="image">
-                                                <a href="blog.html"><img src="assets/images/blog-post/post1.jpg" alt=""></a>
+                                                <a href="blog.html"><img src="{{ asset('minify/images/blog-post/post1.jpg') }}" alt=""></a>
                                             </div>
                                         </div>
                                         <!-- /.blog-post-image -->
@@ -1983,7 +1956,7 @@
                     <div class="sidebar-widget testimonials-block">
                         <div id="advertisement" class="advertisement">
                             <div class="item">
-                                <div class="avatar"><img src="assets/images/testimonials/member1.png" alt="Image"></div>
+                                <div class="avatar"><img src="{{ asset('minify/images/testimonials/member1.png') }}" alt="Image"></div>
                                 <div class="testimonials"><em>"</em> Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
                                 <div class="clients_author">John Doe <span>Abc Company</span> </div>
                                 <!-- /.container-fluid -->
@@ -1991,14 +1964,14 @@
                             <!-- /.item -->
 
                             <div class="item">
-                                <div class="avatar"><img src="assets/images/testimonials/member3.png" alt="Image"></div>
+                                <div class="avatar"><img src="{{ asset('minify/images/testimonials/member3.png') }}" alt="Image"></div>
                                 <div class="testimonials"><em>"</em>Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
                                 <div class="clients_author">Stephen Doe <span>Xperia Designs</span> </div>
                             </div>
                             <!-- /.item -->
 
                             <div class="item">
-                                <div class="avatar"><img src="assets/images/testimonials/member2.png" alt="Image"></div>
+                                <div class="avatar"><img src="{{ asset('minify/images/testimonials/member2.png') }}" alt="Image"></div>
                                 <div class="testimonials"><em>"</em> Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
                                 <div class="clients_author">Saraha Smith <span>Datsun &amp; Co</span> </div>
                                 <!-- /.container-fluid -->
@@ -2017,4 +1990,5 @@
         <!-- /.container -->
     </div>
     <!-- /#top-banner-and-menu -->
+    @include('frontend.layouts.popup-subcribe-email')
 @endsection

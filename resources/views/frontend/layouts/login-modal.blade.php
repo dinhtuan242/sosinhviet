@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-body">
                 <div class="logo-modal">
-                    <img src="{{ asset('minify/images/logo1.png') }}" alt="{{ config('app.name') }}">
+                    <img src="{{ asset('minify/images/logo.png') }}" alt="{{ config('app.name') }}">
                 </div>
                 <a class="login-btn btn btn-primary login-facebook modal-body-item" href="{{ url('/auth/redirect/facebook') }}"><i class="fa fa-facebook"></i>&nbsp;Tiếp tục với Facebook</a>
                 <a class="login-btn btn btn-primary login-google modal-body-item" href="{{ url('/auth/redirect/google') }}"><i class="fa fa-google-plus"></i>&nbsp;Tiếp tục với Google</a>

@@ -39,4 +39,5 @@ mix.styles([
         'public/un-minify/js/bootstrap-select.min.js',
         'public/un-minify/js/wow.min.js',
         'public/un-minify/js/scripts.js',
+        'public/un-minify/js/main.js',
     ], 'public/minify/js/frontend.min.js')
