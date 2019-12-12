@@ -24,6 +24,7 @@ class Product extends Model
         'sku',
         'status_discount',
         'url',
+        'hasDelete',
         'created_at',
         'updated_at',
     ];

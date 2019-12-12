@@ -22,45 +22,44 @@ class ProductService
         return DB::transaction(function () use ($products, $domain) {
             $this->product->whereDomain($domain)
                     ->whereDate('created_at', '<>', now()->toDateString())
+                    ->where('hasDelete', config('constant.hasDelete'))
                     ->delete();
 
             $this->product->insert($products);
             if ($domain == 'shopee.vn') {
                 return $this->product->whereDomain($domain)
-                            ->where('category', '<>', 'me-va-be')->delete();
+                            ->where('hasDelete', config('constant.hasDelete'))
+                            ->whereNotIn('category', ['me-va-be', 'thoi-trang-my-pham', 'suc-khoe', ])
+                            ->delete();
             }
         });
     }
 
     public function convertProduct($domain, $hasDiscount = 0, $limit = 200)
     {
-
-        $total = json_decode($this->getProductAccesstrade($domain, $hasDiscount, $limit, 1), true)['total'];
-        $pageCount = $total / $limit;
-        if ($domain == 'shopee.vn') {
-            $pageCount = 100;
-        }
         $productConverted = [];
-        for ($i = 1; $i < $pageCount; $i++) {
+        for ($i = 1; $i < 6; $i++) {
             $products = json_decode($this->getProductAccesstrade($domain, $hasDiscount, $limit, $i), true)['data'];
             foreach ($products as $key => $products) {
-                $productConverted[$key]['aff_link'] = $products['aff_link'];
-                $productConverted[$key]['campaign'] = $products['campaign'];
-                $productConverted[$key]['category'] = $products['cate'];
-                $productConverted[$key]['description'] = $products['desc'];
-                $productConverted[$key]['discount'] = $products['discount'];
-                $productConverted[$key]['discount_amount'] = $products['discount_amount'];
-                $productConverted[$key]['discount_rate'] = $products['discount_rate'];
-                $productConverted[$key]['domain'] = $products['domain'];
-                $productConverted[$key]['image'] = $products['image'];
-                $productConverted[$key]['merchant'] = $products['merchant'];
-                $productConverted[$key]['name'] = $products['name'];
-                $productConverted[$key]['price'] = $products['price'];
-                $productConverted[$key]['product_id'] = $products['product_id'];
-                $productConverted[$key]['promotion'] = $products['promotion'];
-                $productConverted[$key]['sku'] = $products['sku'];
-                $productConverted[$key]['status_discount'] = $products['status_discount'];
-                $productConverted[$key]['url'] = $products['url'];
+                $productConverted[$i . $key]['aff_link'] = $products['aff_link'];
+                $productConverted[$i . $key]['campaign'] = $products['campaign'];
+                $productConverted[$i . $key]['category'] = $products['cate'];
+                $productConverted[$i . $key]['description'] = $products['desc'];
+                $productConverted[$i . $key]['discount'] = $products['discount'];
+                $productConverted[$i . $key]['discount_amount'] = $products['discount_amount'];
+                $productConverted[$i . $key]['discount_rate'] = $products['discount_rate'];
+                $productConverted[$i . $key]['domain'] = $products['domain'];
+                $productConverted[$i . $key]['image'] = $products['image'];
+                $productConverted[$i . $key]['merchant'] = $products['merchant'];
+                $productConverted[$i . $key]['name'] = $products['name'];
+                $productConverted[$i . $key]['price'] = $products['price'];
+                $productConverted[$i . $key]['product_id'] = $products['product_id'];
+                $productConverted[$i . $key]['promotion'] = $products['promotion'];
+                $productConverted[$i . $key]['sku'] = $products['sku'];
+                $productConverted[$i . $key]['status_discount'] = $products['status_discount'];
+                $productConverted[$i . $key]['url'] = $products['url'];
+                $productConverted[$i . $key]['created_at'] = now();
+                $productConverted[$i . $key]['updated_at'] = now();
             }
         }
 
