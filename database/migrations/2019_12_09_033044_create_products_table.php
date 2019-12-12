@@ -15,23 +15,24 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('aff_link')->nullable();
+            $table->text('aff_link')->nullable();
             $table->string('campaign')->nullable();
             $table->string('category')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->string('discount')->nullable();
             $table->string('discount_amount')->nullable();
             $table->string('discount_rate')->nullable();
             $table->string('domain')->nullable();
-            $table->string('image')->nullable();
+            $table->text('image')->nullable();
             $table->string('merchant')->nullable();
-            $table->string('name')->nullable();
+            $table->text('name')->nullable();
             $table->string('price')->nullable();
             $table->string('product_id')->nullable();
             $table->string('promotion')->nullable();
             $table->string('sku')->nullable();
             $table->string('status_discount')->nullable();
-            $table->string('url')->nullable();
+            $table->text('url')->nullable();
+            $table->tinyInteger('hasDelete')->default(config('constant.hasDelete'));
             $table->timestamps();
         });
     }

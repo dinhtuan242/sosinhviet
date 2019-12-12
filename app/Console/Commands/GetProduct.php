@@ -41,6 +41,9 @@ class GetProduct extends Command
      */
     public function handle()
     {
-        return $this->productService->store('concung.com', 0, 200);
+        $this->productService->store('concung.com', 0, 200);
+        $this->productService->store('bibabo.vn', 0, 200);
+        $this->productService->store('shopee.vn', 0, 200);
+        $this->productService->store('kolabay.com.au', 0, 200);
     }
 }
