@@ -67,7 +67,7 @@
                     <!-- /.module-heading -->
 
                     <div class="module-body">
-                        <div class="fb-page" data-href="https://www.facebook.com/sosinhviet/" data-width="500" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+                        <div class="fb-page" data-href="https://www.facebook.com/sosinhviet/" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
                             <blockquote cite="https://www.facebook.com/sosinhviet/" class="fb-xfbml-parse-ignore">
                                 <a href="https://www.facebook.com/sosinhviet/">Sơ sinh Việt</a>
                             </blockquote>

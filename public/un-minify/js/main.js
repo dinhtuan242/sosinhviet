@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    $('img.lazy').lazy();
     var popDisplayed = getCookie('popDisplayed');
     if(popDisplayed !== '1') {
         $('.js-modal.subcribe-email').delay(600).fadeIn(600, () => {});
