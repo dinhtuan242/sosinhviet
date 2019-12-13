@@ -94,4 +94,37 @@ class ProductService
                         ->orderBy('discount_rate', 'desc')
                         ->take(config('constant.ProductPaginateHomage'))->get();
     }
+
+    public function getProductByCampaignWithPaginate($campaign, $filter)
+    {
+        $query = $this->product->whereCampaign($campaign);
+        if ($filter) {
+            if ($filter == 'moi-nhat') {
+                $query = $query->orderBy('created_at', 'desc');
+            }
+            if ($filter == 'thap-den-cao') {
+                $query = $query->orderBy('discount', 'asc');
+            }
+            if ($filter == 'cao-den-thap') {
+                $query = $query->orderBy('discount', 'desc');
+            }
+        } else {
+            $query->orderBy('category', 'asc')
+                ->orderBy('status_discount', 'desc')
+                ->orderBy('discount_rate', 'desc');
+        }
+        return $query->paginate(config('constant.ProductPaginateHomage'));
+    }
+
+    public function getCampaign()
+    {
+        return $this->product->distinct('campaign')->pluck('campaign');
+    }
+    public function hotProduct()
+    {
+        return $this->product->whereIn('campaign', ['concung', 'bibabo'])
+                            ->orderBy('status_discount', 'desc')
+                            ->orderBy('price', 'desc')
+                            ->take(3)->get();
+    }
 }

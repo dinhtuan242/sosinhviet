@@ -15,3 +15,5 @@ Route::get('', 'Frontend\Home\HomePageController@main')->name('home-page');
 Route::get('dang-xuat', 'Frontend\Users\SocialController@signOut')->name('user.sign-out');
 Route::get('/auth/redirect/{provider}', 'Frontend\Users\SocialController@redirect');
 Route::get('/callback/{provider}', 'Frontend\Users\SocialController@callback');
+Route::get('/nha-cung-cap/{campaign}/{filter?}', 'Frontend\Pages\CampaignProductController@main')
+    ->name('campaign-product');
