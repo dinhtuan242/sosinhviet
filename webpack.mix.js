@@ -40,4 +40,5 @@ mix.styles([
         'public/un-minify/js/wow.min.js',
         'public/un-minify/js/scripts.js',
         'public/un-minify/js/main.js',
+        'public/un-minify/js/jquery.lazy.min.js',
     ], 'public/minify/js/frontend.min.js')

@@ -85,4 +85,13 @@ class ProductService
 
         return $result->getBody()->getContents();
     }
+
+    public function getProductByCampaign($campaign)
+    {
+        return $this->product->whereCampaign($campaign)
+                        ->orderBy('category', 'asc')
+                        ->orderBy('status_discount', 'desc')
+                        ->orderBy('discount_rate', 'desc')
+                        ->take(config('constant.ProductPaginateHomage'))->get();
+    }
 }
