@@ -71,13 +71,14 @@
                         <!-- /.contact-row -->
                         <!-- ============================================================= SEARCH AREA ============================================================= -->
                         <div class="search-area">
-                            <form>
+                            <form method="get" action="{{ route('search') }}">
+                                @csrf
                                 <div class="control-group">
                                     <ul class="categories-filter animate-dropdown">
                                         <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">Tìm kiếm </a></li>
                                     </ul>
-                                    <input class="search-field" placeholder="Sản phẩm mẹ muốn tìm là gì..." />
-                                    <a class="search-button" href="javascript:void(0)"></a>
+                                    <input name="search" class="search-field" placeholder="Sản phẩm mẹ muốn tìm là gì..." />
+                                    <button class="search-button" type="submit"></button>
                                 </div>
                             </form>
                         </div>

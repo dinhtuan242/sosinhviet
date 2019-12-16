@@ -17,3 +17,4 @@ Route::get('/auth/redirect/{provider}', 'Frontend\Users\SocialController@redirec
 Route::get('/callback/{provider}', 'Frontend\Users\SocialController@callback');
 Route::get('/nha-cung-cap/{campaign}/{filter?}', 'Frontend\Pages\CampaignProductController@main')
     ->name('campaign-product');
+Route::get('/tim-kiem', 'Frontend\Pages\SearchProduct@main')->name('search');
