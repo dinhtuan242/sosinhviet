@@ -21,16 +21,16 @@ class ProductService
         $products = $this->convertProduct($domain, $hasDiscount);
         return DB::transaction(function () use ($products, $domain) {
             $this->product->whereDomain($domain)
-                    ->whereDate('created_at', '<>', now()->toDateString())
-                    ->where('hasDelete', config('constant.hasDelete'))
-                    ->delete();
+                ->whereDate('created_at', '<>', now()->toDateString())
+                ->where('hasDelete', config('constant.hasDelete'))
+                ->delete();
 
             $this->product->insert($products);
             if ($domain == 'shopee.vn') {
                 return $this->product->whereDomain($domain)
-                            ->where('hasDelete', config('constant.hasDelete'))
-                            ->whereNotIn('category', ['me-va-be', 'thoi-trang-my-pham', 'suc-khoe', ])
-                            ->delete();
+                    ->where('hasDelete', config('constant.hasDelete'))
+                    ->whereNotIn('category', ['me-va-be', 'thoi-trang-my-pham', 'suc-khoe',])
+                    ->delete();
             }
         });
     }
@@ -89,10 +89,10 @@ class ProductService
     public function getProductByCampaign($campaign)
     {
         return $this->product->whereCampaign($campaign)
-                        ->orderBy('category', 'asc')
-                        ->orderBy('status_discount', 'desc')
-                        ->orderBy('discount_rate', 'desc')
-                        ->take(config('constant.ProductPaginateHomage'))->get();
+            ->orderBy('category', 'asc')
+            ->orderBy('status_discount', 'desc')
+            ->orderBy('discount_rate', 'desc')
+            ->take(config('constant.ProductPaginateHomage'))->get();
     }
 
     public function getProductByCampaignWithPaginate($campaign, $filter)
@@ -120,11 +120,33 @@ class ProductService
     {
         return $this->product->distinct('campaign')->pluck('campaign');
     }
+
     public function hotProduct()
     {
         return $this->product->whereIn('campaign', ['concung', 'bibabo'])
-                            ->orderBy('status_discount', 'desc')
-                            ->orderBy('price', 'desc')
-                            ->take(3)->get();
+            ->orderBy('status_discount', 'desc')
+            ->orderBy('price', 'desc')
+            ->take(3)->get();
+    }
+
+    public function searchProduct($search, $filter)
+    {
+        $query = $this->product->where('name', 'like', '%' . $search . '%');
+        if ($filter) {
+            if ($filter == 'moi-nhat') {
+                $query = $query->orderBy('created_at', 'desc');
+            }
+            if ($filter == 'thap-den-cao') {
+                $query = $query->orderBy('discount', 'asc');
+            }
+            if ($filter == 'cao-den-thap') {
+                $query = $query->orderBy('discount', 'desc');
+            }
+        } else {
+            $query->orderBy('category', 'asc')
+                ->orderBy('status_discount', 'desc')
+                ->orderBy('discount_rate', 'desc');
+        }
+        return $query->paginate(config('constant.ProductPaginateHomage'));
     }
 }
