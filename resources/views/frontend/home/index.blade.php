@@ -24,55 +24,20 @@
             <div id="brands-carousel" class="logo-slider wow fadeInUp">
                 <div class="logo-slider-inner">
                     <div id="brand-slider" class="owl-carousel brand-slider custom-carousel owl-theme">
+
                         <div class="item m-t-15">
                             <a href="#" class="image"> <img class="lazy" data-src="https://cdn.itviec.com/employers/con-cung/logo/social/951JKi51Fju1SxpEwypcrRE5/CC%20T&L%20Chu%20hong.png" alt=""> </a>
                         </div>
                         <!--/.item-->
 
                         <div class="item m-t-10">
-                            <a href="#" class="image"> <img class="lazy" data-src="{{ asset('minify/images/brands/brand2.png') }}" alt=""> </a>
+                            <a href="#" class="image"> <img class="lazy" data-src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0e/Shopee_logo.svg/1200px-Shopee_logo.svg.png" alt=""> </a>
                         </div>
                         <!--/.item-->
 
                         <div class="item">
-                            <a href="#" class="image"> <img class="lazy" data-src="{{ asset('minify/images/brands/brand3.png') }}" alt=""> </a>
+                            <a href="#" class="image"> <img class="lazy" data-src="http://hrchannels.com/employer/logo/img000000013262.PNG" alt=""> </a>
                         </div>
-                        <!--/.item-->
-
-                        <div class="item">
-                            <a href="#" class="image"> <img class="lazy" data-src="{{ asset('minify/images/brands/brand4.png') }}" alt=""> </a>
-                        </div>
-                        <!--/.item-->
-
-                        <div class="item">
-                            <a href="#" class="image"> <img class="lazy" data-src="{{ asset('minify/images/brands/brand5.png') }}" alt=""> </a>
-                        </div>
-                        <!--/.item-->
-
-                        <div class="item">
-                            <a href="#" class="image"> <img class="lazy" data-src="{{ asset('minify/images/brands/brand6.png') }}" alt=""> </a>
-                        </div>
-                        <!--/.item-->
-
-                        <div class="item">
-                            <a href="#" class="image"> <img class="lazy" data-src="{{ asset('minify/images/brands/brand2.png') }}" alt=""> </a>
-                        </div>
-                        <!--/.item-->
-
-                        <div class="item">
-                            <a href="#" class="image"> <img class="lazy" data-src="{{ asset('minify/images/brands/brand4.png') }}" alt=""> </a>
-                        </div>
-                        <!--/.item-->
-
-                        <div class="item">
-                            <a href="#" class="image"> <img class="lazy" data-src="{{ asset('minify/images/brands/brand1.png') }}" alt=""> </a>
-                        </div>
-                        <!--/.item-->
-
-                        <div class="item">
-                            <a href="#" class="image"> <img class="lazy" data-src="{{ asset('minify/images/brands/brand5.png') }}" alt=""> </a>
-                        </div>
-                        <!--/.item-->
                     </div>
                     <!-- /.owl-carousel #logo-slider -->
                 </div>
@@ -287,243 +252,68 @@
             <!-- /.info-boxes -->
             <!-- ============================================== INFO BOXES : END ============================================== -->
             <!-- ============================================== FEATURED PRODUCTS ============================================== -->
-            <section class="section featured-product wow fadeInUp">
-                <div class="section-title">
-                    <a href="javascript:void(0)"><h3 style="background: #e13475;">Con Cung</h3></a>
-                </div>
-                <div class="featured-block">
-                    <div class="outer-top-xs">
-                        <div class="search-result-container ">
-                            <div id="myTabContent" class="tab-content category-list">
-                                <div class="tab-pane active " id="grid-container">
-                                    <div class="category-product">
-                                        <div class="row">
-                                            @foreach($concungProducts as $product)
-                                                <div class="col-sm-3 col-md-3 wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                                                    <div class="products">
-                                                        <div class="product">
-                                                            <div class="product-image">
-                                                                <div class="image">
-                                                                    <a href="{{ $product['aff_link'] }}" target="_blank" rel="nofollow">
-                                                                        <img class="lazy" data-src="{{ $product['image'] }}" alt="{{ $product['name'] }}">
-                                                                    </a>
+            @foreach($products as $key => $product)
+                <section class="section featured-product wow fadeInUp">
+                    <div class="section-title">
+                        <a href="{{ route('campaign-product', $key) }}"><h3 style="background: #e13475;">{{ ($key == config('detail.campaign')[4]['name'] ? 'kolabay' : $key) ?? '' }}</h3></a>
+                    </div>
+                    <div class="featured-block">
+                        <div class="outer-top-xs">
+                            <div class="search-result-container ">
+                                <div id="myTabContent" class="tab-content category-list">
+                                    <div class="tab-pane active " id="grid-container">
+                                        <div class="category-product">
+                                            <div class="row">
+                                                @foreach($product as $pd)
+                                                    <div class="col-sm-3 col-md-3 wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+                                                        <div class="products">
+                                                            <div class="product">
+                                                                <div class="product-image">
+                                                                    <div class="image">
+                                                                        <a href="{{ $pd['aff_link'] }}" target="_blank" rel="nofollow">
+                                                                            <img class="lazy" data-src="{{ $pd['image'] }}" alt="{{ $pd['campaign'] == config('detail.campaign')[3]['name'] ? $pd['description'] : $pd['name'] }}">
+                                                                        </a>
+                                                                    </div>
+                                                                    <!-- /.image -->
+
+                                                                    @if($pd['status_discount'])
+                                                                        <div class="tag hot"><span> -{{ $pd['discount_rate'] * 100 }}%</span></div>
+                                                                    @endif
                                                                 </div>
-                                                                <!-- /.image -->
+                                                                <!-- /.product-image -->
 
-                                                                @if($product['status_discount'])
-                                                                    <div class="tag hot"><span> -{{ $product['discount_rate'] * 100 }}%</span></div>
-                                                                @endif
+                                                                <div class="product-info text-left">
+                                                                    <h3 class="name">
+                                                                        <a href="{{ $pd['aff_link'] }}" target="_blank" rel="nofollow">{{ \Str::limit($pd['campaign'] == config('detail.campaign')[3]['name'] ? $pd['description'] : $pd['name'], 20) }}</a>
+                                                                    </h3>
+                                                                    <div class="description"></div>
+                                                                    <div class="product-price"> <span class="price"> {{ number_format($pd['discount']) }}đ</span> <span class="price-before-discount">{{ number_format($pd['price']) }}đ</span> </div>
+                                                                    <!-- /.product-price -->
+                                                                </div>
+                                                                <!-- /.product-info -->
+                                                                <!-- /.cart -->
                                                             </div>
-                                                            <!-- /.product-image -->
+                                                            <!-- /.product -->
 
-                                                            <div class="product-info text-left">
-                                                                <h3 class="name">
-                                                                    <a href="{{ $product['aff_link'] }}" target="_blank" rel="nofollow">{{ \Str::limit($product['name'], 20) }}</a>
-                                                                </h3>
-                                                                <div class="description"></div>
-                                                                <div class="product-price"> <span class="price"> {{ number_format($product['discount']) }}đ</span> <span class="price-before-discount">{{ number_format($product['price']) }}đ</span> </div>
-                                                                <!-- /.product-price -->
-                                                            </div>
-                                                            <!-- /.product-info -->
-                                                            <!-- /.cart -->
                                                         </div>
-                                                        <!-- /.product -->
-
+                                                        <!-- /.products -->
                                                     </div>
-                                                    <!-- /.products -->
-                                                </div>
                                             @endforeach
                                             <!-- /.item -->
+                                            </div>
+                                            <!-- /.row -->
                                         </div>
-                                        <!-- /.row -->
+                                        <!-- /.category-product -->
                                     </div>
-                                    <!-- /.category-product -->
+                                    <!-- /.tab-pane -->
+                                    <!-- /.tab-pane #list-container -->
                                 </div>
-                                <!-- /.tab-pane -->
-                                <!-- /.tab-pane #list-container -->
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- /.home-owl-carousel -->
-            </section>
-            <section class="section featured-product wow fadeInUp">
-                <div class="section-title">
-                    <h3 style="background-color: #009fe0;">Bibabo</h3></div>
-                <div class="featured-block">
-                    <div class="outer-top-xs">
-                        <div class="search-result-container ">
-                            <div id="myTabContent" class="tab-content category-list">
-                                <div class="tab-pane active " id="grid-container">
-                                    <div class="category-product">
-                                        <div class="row">
-                                            @foreach($bibaboProducts as $product)
-                                                <div class="col-sm-3 col-md-3 wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                                                    <div class="products">
-                                                        <div class="product">
-                                                            <div class="product-image">
-                                                                <div class="image">
-                                                                    <a href="{{ $product['aff_link'] }}" target="_blank" rel="nofollow">
-                                                                        <img class="lazy" data-src="{{ $product['image'] }}" alt="{{ $product['name'] }}">
-                                                                    </a>
-                                                                </div>
-                                                                <!-- /.image -->
-
-                                                                @if($product['status_discount'])
-                                                                    <div class="tag hot"><span> -{{ $product['discount_rate'] * 100 }}%</span></div>
-                                                                @endif
-                                                            </div>
-                                                            <!-- /.product-image -->
-
-                                                            <div class="product-info text-left">
-                                                                <h3 class="name">
-                                                                    <a href="{{ $product['aff_link'] }}" target="_blank" rel="nofollow">{{ \Str::limit($product['name'], 20) }}</a>
-                                                                </h3>
-                                                                <div class="description"></div>
-                                                                <div class="product-price"> <span class="price"> {{ number_format($product['discount']) }}đ</span> <span class="price-before-discount">{{ number_format($product['price']) }}đ</span> </div>
-                                                                <!-- /.product-price -->
-
-                                                            </div>
-                                                            <!-- /.product-info -->
-                                                        </div>
-                                                        <!-- /.product -->
-
-                                                    </div>
-                                                    <!-- /.products -->
-                                                </div>
-                                        @endforeach
-                                        <!-- /.item -->
-                                        </div>
-                                        <!-- /.row -->
-                                    </div>
-                                    <!-- /.category-product -->
-                                </div>
-                                <!-- /.tab-pane -->
-                                <!-- /.tab-pane #list-container -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.home-owl-carousel -->
-            </section>
-            <section class="section featured-product wow fadeInUp">
-                <div class="section-title">
-                    <h3 style="background-color: #fa4f2f;">Shopee</h3></div>
-                <div class="featured-block">
-                    <div class="outer-top-xs">
-                        <div class="search-result-container ">
-                            <div id="myTabContent" class="tab-content category-list">
-                                <div class="tab-pane active " id="grid-container">
-                                    <div class="category-product">
-                                        <div class="row">
-                                            @foreach($shopeeProducts as $product)
-                                                <div class="col-sm-3 col-md-3 wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                                                    <div class="products">
-                                                        <div class="product">
-                                                            <div class="product-image">
-                                                                <div class="image">
-                                                                    <a href="{{ $product['aff_link'] }}" target="_blank" rel="nofollow">
-                                                                        <img class="lazy" data-src="{{ $product['image'] }}" alt="{{ $product['description'] }}">
-                                                                    </a>
-                                                                </div>
-                                                                <!-- /.image -->
-
-                                                                @if($product['status_discount'])
-                                                                    <div class="tag hot"><span> -{{ $product['discount_rate'] * 100 }}%</span></div>
-                                                                @endif
-                                                            </div>
-                                                            <!-- /.product-image -->
-
-                                                            <div class="product-info text-left">
-                                                                <h3 class="name">
-                                                                    <a href="{{ $product['aff_link'] }}" target="_blank" rel="nofollow">{{ \Str::limit($product['description'], 20) }}</a>
-                                                                </h3>
-                                                                <div class="description"></div>
-                                                                <div class="product-price"> <span class="price"> {{ number_format($product['discount']) }}đ</span> <span class="price-before-discount">{{ number_format($product['price']) }}đ</span> </div>
-                                                                <!-- /.product-price -->
-
-                                                            </div>
-                                                            <!-- /.product-info -->
-                                                        </div>
-                                                        <!-- /.product -->
-
-                                                    </div>
-                                                    <!-- /.products -->
-                                                </div>
-                                        @endforeach
-                                        <!-- /.item -->
-                                        </div>
-                                        <!-- /.row -->
-                                    </div>
-                                    <!-- /.category-product -->
-                                </div>
-                                <!-- /.tab-pane -->
-                                <!-- /.tab-pane #list-container -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.home-owl-carousel -->
-            </section>
-            <section class="section featured-product wow fadeInUp">
-                <div class="section-title">
-                    <h3 style="background-color: #004f9e;">Kolabay</h3></div>
-                <div class="featured-block">
-                    <div class="outer-top-xs">
-                        <div class="search-result-container ">
-                            <div id="myTabContent" class="tab-content category-list">
-                                <div class="tab-pane active " id="grid-container">
-                                    <div class="category-product">
-                                        <div class="row">
-                                            @foreach($kolabayProducts as $product)
-                                                <div class="col-sm-3 col-md-3 wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                                                    <div class="products">
-                                                        <div class="product">
-                                                            <div class="product-image">
-                                                                <div class="image">
-                                                                    <a href="{{ $product['aff_link'] }}" target="_blank" rel="nofollow">
-                                                                        <img class="lazy" data-src="{{ $product['image'] }}" alt="{{ $product['name'] }}">
-                                                                    </a>
-                                                                </div>
-                                                                <!-- /.image -->
-
-                                                                @if($product['status_discount'])
-                                                                    <div class="tag hot"><span> -{{ $product['discount_rate'] * 100 }}%</span></div>
-                                                                @endif
-                                                            </div>
-                                                            <!-- /.product-image -->
-
-                                                            <div class="product-info text-left">
-                                                                <h3 class="name">
-                                                                    <a href="{{ $product['aff_link'] }}" target="_blank" rel="nofollow">{{ \Str::limit($product['name'], 20) }}</a>
-                                                                </h3>
-                                                                <div class="description"></div>
-                                                                <div class="product-price"> <span class="price"> {{ number_format($product['discount']) }}đ</span> <span class="price-before-discount">{{ number_format($product['price']) }}đ</span> </div>
-                                                                <!-- /.product-price -->
-
-                                                            </div>
-                                                            <!-- /.product-info -->
-                                                        </div>
-                                                        <!-- /.product -->
-
-                                                    </div>
-                                                    <!-- /.products -->
-                                                </div>
-                                        @endforeach
-                                        <!-- /.item -->
-                                        </div>
-                                        <!-- /.row -->
-                                    </div>
-                                    <!-- /.category-product -->
-                                </div>
-                                <!-- /.tab-pane -->
-                                <!-- /.tab-pane #list-container -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.home-owl-carousel -->
-            </section>
+                    <!-- /.home-owl-carousel -->
+                </section>
+            @endforeach
             <!-- /.section -->
             <!-- ============================================== FEATURED PRODUCTS : END ============================================== -->
 
@@ -661,27 +451,19 @@
                     <!-- ============================================== Testimonials============================================== -->
                     <div class="sidebar-widget testimonials-block">
                         <div id="advertisement" class="advertisement">
-                            <div class="item">
-                                <div class="avatar"><img class="lazy" data-src="{{ asset('minify/images/testimonials/member1.png') }}" alt="Image"></div>
-                                <div class="testimonials"><em>"</em> Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
-                                <div class="clients_author">John Doe <span>Abc Company</span> </div>
-                                <!-- /.container-fluid -->
-                            </div>
-                            <!-- /.item -->
-
-                            <div class="item">
-                                <div class="avatar"><img class="lazy" data-src="{{ asset('minify/images/testimonials/member3.png') }}" alt="Image"></div>
-                                <div class="testimonials"><em>"</em>Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
-                                <div class="clients_author">Stephen Doe <span>Xperia Designs</span> </div>
-                            </div>
-                            <!-- /.item -->
-
-                            <div class="item">
-                                <div class="avatar"><img class="lazy" data-src="{{ asset('minify/images/testimonials/member2.png') }}" alt="Image"></div>
-                                <div class="testimonials"><em>"</em> Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
-                                <div class="clients_author">Saraha Smith <span>Datsun &amp; Co</span> </div>
-                                <!-- /.container-fluid -->
-                            </div>
+                            @foreach($hotProducts as $product)
+                                <div class="item">
+                                    <div class="avatar"><img class="lazy" data-src="{{ $product['image'] }}" alt="{{ $product['name'] }}"></div>
+                                    <div class="testimonials"><em>"</em> {{ $product['name'] }}<em>"</em></div>
+                                    <div class="clients_author">
+                                        <a href="{{ $product['aff_link'] }}" style="background: #0670a3; padding: 5px; border-radius: 5px; color: white;">Mua ngay</a>
+                                        <span style=" margin-top: 8%;">
+                                                <a href="{{ $product['aff_link'] }}" style="background: #0670a3; padding: 5px; border-radius: 5px; color: white; margin-top: 1%">{{ $product['campaign'] }}</a>
+                                            </span>
+                                    </div>
+                                    <!-- /.container-fluid -->
+                                </div>
+                            @endforeach
                             <!-- /.item -->
                         </div>
                         <!-- /.owl-carousel -->

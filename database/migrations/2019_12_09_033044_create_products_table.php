@@ -19,14 +19,14 @@ class CreateProductsTable extends Migration
             $table->string('campaign')->nullable();
             $table->string('category')->nullable();
             $table->text('description')->nullable();
-            $table->string('discount')->nullable();
+            $table->double('discount')->nullable();
             $table->string('discount_amount')->nullable();
             $table->string('discount_rate')->nullable();
             $table->string('domain')->nullable();
             $table->text('image')->nullable();
             $table->string('merchant')->nullable();
             $table->text('name')->nullable();
-            $table->string('price')->nullable();
+            $table->double('price')->nullable();
             $table->string('product_id')->nullable();
             $table->string('promotion')->nullable();
             $table->string('sku')->nullable();

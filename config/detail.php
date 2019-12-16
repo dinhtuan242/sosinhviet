@@ -7,4 +7,22 @@
         'description' => env('APP_DESCRIPTION'),
         'accesstrade_authorization' => env('AUTHORIZATION'),
         'content_type' => env('CONTENT_TYPE'),
+        'campaign' => [
+            1 => [
+                'name' => 'concung',
+                'website' => 'concung.com',
+            ],
+            2 => [
+                'name' => 'bibabo',
+                'website' => 'bibabo.vn',
+            ],
+            3 => [
+                'name' => 'shopee',
+                'website' => 'shopee.vn',
+            ],
+            4 => [
+                'name' => 'kolabayy.myharavan.com',
+                'website' => 'kolabay.com.au',
+            ]
+        ]
     ];

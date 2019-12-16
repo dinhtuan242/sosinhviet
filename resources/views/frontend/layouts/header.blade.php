@@ -27,7 +27,7 @@
                         @guest
                             <div class="cnt-account">
                                 <ul class="list-unstyled">
-                                    <li class="js-show-login-modal" data-toggle="modal" data-target="#login-modal"><a href="javascript:void(0)"><i class="icon fa fa-sign-in"></i>Đăng nhập</a></li>  
+                                    <li class="js-show-login-modal" data-toggle="modal" data-target="#login-modal"><a href="javascript:void(0)"><i class="icon fa fa-sign-in"></i>Đăng nhập</a></li>
                                 </ul>
                             </div>
                             @include('frontend.layouts.login-modal')
@@ -107,14 +107,17 @@
                             <div class="nav-outer">
                                 <ul class="nav navbar-nav">
                                     <li class="@if(Route::currentRouteName() == 'home-page') active @endif dropdown yamm-fw"> <a href="{{ route('home-page') }}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-home"></i> Trang chủ</a> </li>
-                                    <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Pages</a>
+                                    <li class="dropdown @if(Route::currentRouteName() == 'campaign-product') active @endif"> <a href="javascript:void(0)" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Nhãn hiệu</a>
                                         <ul class="dropdown-menu pages">
                                             <li>
                                                 <div class="yamm-content">
                                                     <div class="row">
                                                         <div class="col-xs-12 col-menu">
                                                             <ul class="links">
-                                                                <li><a href="{{ route('home-page') }}">Trang chủ</a></li>
+                                                                <li><a href="{{ route('campaign-product', 'concung') }}">Con cưng</a></li>
+                                                                <li><a href="{{ route('campaign-product', 'bibabo') }}">Bibabo</a></li>
+                                                                <li><a href="{{ route('campaign-product', 'shopee') }}">Shopee</a></li>
+                                                                <li><a href="{{ route('campaign-product', 'kolabayy.myharavan.com') }}">Kolabay</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -122,7 +125,6 @@
                                             </li>
                                         </ul>
                                     </li>
-
                                 </ul>
                                 <!-- /.navbar-nav -->
                                 <div class="clearfix"></div>

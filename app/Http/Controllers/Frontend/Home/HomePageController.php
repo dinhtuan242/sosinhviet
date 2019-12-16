@@ -17,15 +17,15 @@ class HomePageController extends Controller
 
     public function main()
     {
-        $concungProducts = $this->productService->getProductByCampaign('concung');
-        $bibaboProducts = $this->productService->getProductByCampaign('bibabo');
-        $shopeeProducts = $this->productService->getProductByCampaign('shopee');
-        $kolabayProducts = $this->productService->getProductByCampaign('kolabayy.myharavan.com');
+        $listCampaign = config('detail.campaign');
+        $products = [];
+        foreach ($listCampaign as $campaign) {
+            $products[$campaign['name']] = $this->productService->getProductByCampaign($campaign['name']);
+        }
+        $hotProducts = $this->productService->hotProduct();
         return view('frontend.home.index', compact([
-            'concungProducts',
-            'bibaboProducts',
-            'shopeeProducts',
-            'kolabayProducts',
+            'products',
+            'hotProducts',
         ]));
     }
 }

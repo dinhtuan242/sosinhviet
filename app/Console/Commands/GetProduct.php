@@ -41,9 +41,9 @@ class GetProduct extends Command
      */
     public function handle()
     {
-        $this->productService->store('concung.com', 0, 200);
-        $this->productService->store('bibabo.vn', 0, 200);
-        $this->productService->store('shopee.vn', 0, 200);
-        $this->productService->store('kolabay.com.au', 0, 200);
+        $listCampaign = config('detail.campaign');
+        foreach ($listCampaign as $campaign) {
+            $this->productService->store($campaign['website'], 0, 200);
+        }
     }
 }
