@@ -18,3 +18,6 @@ Route::get('/callback/{provider}', 'Frontend\Users\SocialController@callback');
 Route::get('/nha-cung-cap/{campaign}/{filter?}', 'Frontend\Pages\CampaignProductController@main')
     ->name('campaign-product');
 Route::get('/tim-kiem', 'Frontend\Pages\SearchProduct@main')->name('search');
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('', 'Admin\Pages\HomeController@main')->name('admin-home');
+});

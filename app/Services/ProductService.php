@@ -149,4 +149,15 @@ class ProductService
         }
         return $query->paginate(config('constant.ProductPaginateHomage'));
     }
+
+    public function count()
+    {
+        return $this->product->all()->count();
+    }
+
+    public function allImport()
+    {
+        return $this->product->where('hasDelete', config('constant.cantDelete'))
+                            ->paginate(config('constant.ProductPaginateHomage'));
+    }
 }
