@@ -26,4 +26,9 @@ class UserService
         }
         return $user;
     }
+
+    public function count()
+    {
+        return $this->user->all()->count();
+    }
 }

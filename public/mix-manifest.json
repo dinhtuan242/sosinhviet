@@ -1,4 +1,6 @@
 {
     "/minify/css/frontend.min.css": "/minify/css/frontend.min.css",
-    "/minify/js/frontend.min.js": "/minify/js/frontend.min.js"
+    "/minify/admin/css/admin.min.css": "/minify/admin/css/admin.min.css",
+    "/minify/js/frontend.min.js": "/minify/js/frontend.min.js",
+    "/minify/admin/js/admin.min.js": "/minify/admin/js/admin.min.js"
 }
