@@ -6,4 +6,5 @@
         'hasDelete' => 1,
         'cantDelete' => 0,
         'ProductPaginateHomage' => 12,
+        'post_image' => 'images/posts',
     ];

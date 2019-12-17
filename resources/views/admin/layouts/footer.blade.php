@@ -17,5 +17,6 @@
 
 <!-- Scripts -->
 <script src="{{ asset('minify/admin/js/admin.min.js') }}"></script>
+@yield('script')
 </body>
 </html>
