@@ -7,9 +7,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="description" content="{{ config('detail.description') }}">
+    <meta itemprop="name" content="{{ config('app.name') }}">
     <meta name="author" content="{{ config('detail.author') }}">
     <meta name="keywords" content="{{ config('detail.keywords') }}">
     <meta name="robots" content="all">
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://sosinhviet.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ $og['title'] }}">
+    <meta property="og:description" content="{{ $og['description'] }}">
+    <meta property="og:image" content="{{ $og['image'] }}">
+
     <title>{{ config('app.name') }}</title>
     <link rel="shortcut icon" href="{{ asset('minify/images/favicon.png') }}">
     <!-- Bootstrap Core CSS -->
@@ -107,7 +115,7 @@
                         <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
                             <div class="nav-outer">
                                 <ul class="nav navbar-nav">
-                                    <li class="@if(Route::currentRouteName() == 'home-page') active @endif dropdown yamm-fw"> <a href="{{ route('home-page') }}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-home"></i> Trang chủ</a> </li>
+                                    <li class="@if(Route::currentRouteName() == 'home-page') active @endif dropdown yamm-fw"> <a href="{{ route('home-page') }}"><i class="fa fa-home"></i> Trang chủ</a> </li>
                                     <li class="dropdown @if(Route::currentRouteName() == 'campaign-product') active @endif"> <a href="javascript:void(0)" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Nhãn hiệu</a>
                                         <ul class="dropdown-menu pages">
                                             <li>
@@ -126,6 +134,7 @@
                                             </li>
                                         </ul>
                                     </li>
+                                    <li class="@if(in_array(Route::currentRouteName(), ['blog.list', 'blog.detail'])) active @endif dropdown yamm-fw"> <a href="{{ route('blog.list') }}"><i class="fa fa-sticky-note-o"></i> Bài viết</a> </li>
                                 </ul>
                                 <!-- /.navbar-nav -->
                                 <div class="clearfix"></div>

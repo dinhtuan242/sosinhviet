@@ -22,11 +22,18 @@ class CampaignProductController extends Controller
         $hotProducts = $this->productService->hotProduct();
         $campaign = $request['campaign'];
 
+        $og = [
+            'title' => 'Danh sách các sản phẩm cho mẹ và bé của ' . $campaign,
+            'description' => 'Danh sách các sản phẩm cho mẹ và bé của ' . $campaign,
+            'image' => asset('minify/images/facebook/trang-danh-sach-san-pham.png'),
+        ];
+
         return view('frontend.home.category', compact([
             'products',
             'campaigns',
             'hotProducts',
             'campaign',
+            'og',
         ]));
     }
 }
