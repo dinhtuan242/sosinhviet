@@ -22,6 +22,9 @@
     <nav class="navbar navbar-expand-sm navbar-default">
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
+                <li>
+                    <a href="javascript:void(0)"><i class="menu-icon fa fa-user"></i>{{ Auth::user()->name }} </a>
+                </li>
                 <li class="@if(Route::currentRouteName() == 'admin-home') active @endif">
                     <a href="{{ route('admin-home') }}"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                 </li>
