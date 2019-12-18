@@ -41,11 +41,47 @@ class PostService
             }
             $this->post['title'] = $params['title'];
             $this->post['description'] = $params['description'];
-            $this->post['content'] = $params['content'];
+            $this->post['content'] = utf8_encode($params['content']);
             $this->post['slug'] = Str::slug($params['title']);
             $this->post['image'] = $imageName;
         });
 
         return $this->post->save();
+    }
+
+    public function findById($id)
+    {
+        return $this->post->findOrFail($id);
+    }
+
+    public function update($id, $params)
+    {
+        $post = $this->post->findOrFail($id);
+        DB::transaction(function () use ($params, $post) {
+            if (isset($params['image'])) {
+                $imageName = '';
+                $imageName = $this->uploadService->uploadImage(
+                    $params['image'],
+                    config('constant.post_image'),
+                    Str::slug($params['title'])
+                );
+                $this->uploadService->unlinkImage($post['image'], config('constant.post_image'));
+                $post['image'] = $imageName;
+            }
+            $post['title'] = $params['title'];
+            $post['description'] = $params['description'];
+            $post['content'] = utf8_encode($params['content']);
+            $post['slug'] = Str::slug($params['title']);
+        });
+        return $post->save();
+    }
+
+    public function destroy($id)
+    {
+        return DB::transaction(function () use ($id) {
+            $post = $this->post->findOrFail($id);
+            $this->uploadService->unlinkImage($post['image'], config('constant.post_image'));
+            $post->delete();
+        });
     }
 }

@@ -9,6 +9,11 @@
                         <strong>Bài viết</strong> Thêm mới
                     </div>
                     <div class="card-body card-block">
+                        @if(session()->has('errors'))
+                            <div class="alert alert-danger">
+                                {{ session()->get('errors') }}
+                            </div>
+                        @endif
                         <form action="{{ route('post.store') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
                             @csrf
                             <div class="row form-group">
