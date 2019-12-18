@@ -20,7 +20,7 @@ class PostService
 
     public function all()
     {
-        return $this->post->paginate(config('constant.ProductPaginateHomage'));
+        return $this->post->orderBy('created_at', 'desc')->paginate(config('constant.ProductPaginateHomage'));
     }
 
     public function count()
@@ -83,5 +83,15 @@ class PostService
             $this->uploadService->unlinkImage($post['image'], config('constant.post_image'));
             $post->delete();
         });
+    }
+
+    public function getPostForHomePage()
+    {
+        return $this->post->orderBy('created_at', 'desc')->take(5)->get();
+    }
+
+    public function findBySlug($slug)
+    {
+        return $this->post->whereSlug($slug)->first();
     }
 }

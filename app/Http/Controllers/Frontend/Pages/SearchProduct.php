@@ -20,11 +20,17 @@ class SearchProduct extends Controller
         $products = $this->productService->searchProduct($request['search'], $request['filter']);
         $campaigns = $this->productService->getCampaign();
         $hotProducts = $this->productService->hotProduct();
+        $og = [
+            'title' => 'Danh sách các sản phẩm cho mẹ và bé của ' . $request['search'],
+            'description' => 'Danh sách các sản phẩm cho mẹ và bé của ' . $request['search'],
+            'image' => asset('minify/images/facebook/trang-danh-sach-san-pham.png'),
+        ];
 
         return view('frontend.home.search-result', compact([
             'products',
             'campaigns',
             'hotProducts',
+            'og'
         ]));
     }
 }

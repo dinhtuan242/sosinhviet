@@ -18,6 +18,8 @@ Route::get('/callback/{provider}', 'Frontend\Users\SocialController@callback');
 Route::get('/nha-cung-cap/{campaign}/{filter?}', 'Frontend\Pages\CampaignProductController@main')
     ->name('campaign-product');
 Route::get('/tim-kiem', 'Frontend\Pages\SearchProduct@main')->name('search');
+Route::get('bai-viet', 'Frontend\Pages\BlogController@main')->name('blog.list');
+Route::get('bai-viet/{slug}', 'Frontend\Pages\BlogController@detail')->name('blog.detail');
 Route::group(['prefix' => 'admin', 'middleware' => ['is_admin']], function () {
     Route::get('', 'Admin\Pages\HomeController@main')->name('admin-home');
     Route::group(['prefix' => 'post'], function () {
