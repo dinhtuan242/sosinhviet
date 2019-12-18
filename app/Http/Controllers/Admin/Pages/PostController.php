@@ -43,14 +43,46 @@ class PostController extends Controller
         return redirect()->route('post.list')->with('success', 'Thêm bài viết thành công');
     }
 
+    public function edit(Request $request)
+    {
+        $post = $this->postService->findById($request['id']);
+
+        return view('admin.Pages.Post.edit', compact([
+            'post',
+        ]));
+    }
+
+    public function update(Request $request)
+    {
+        $validated = $this->validation($request);
+        if (!$validated) {
+            return redirect()->back()->with('errors', $validated);
+        }
+        $params = $this->getParams($request);
+        $updated = $this->postService->update($request['id'], $params);
+        if (!$updated) {
+            return redirect()->back()->with('errors', $updated);
+        }
+        return redirect()->route('post.list')->with('success', 'Sửa bài viết thành công');
+    }
     public function validation(Request $request)
     {
         return $request->validate([
            'title' => 'required',
            'description' => 'required',
            'content' => 'required',
-           'image' => 'required',
+           'image' => 'nullable',
         ]);
+    }
+
+    public function destroy(Request $request)
+    {
+        $deleted = $this->postService->destroy($request['id']);
+        if (!$deleted) {
+            return redirect()->back()->with('errors', $deleted);
+        }
+
+        return redirect()->back()->with('success', 'Xóa thành công');
     }
 
     public function getParams(Request $request)

@@ -1,7 +1,7 @@
-$(document).ready(function() {
+$(document).ready(function () {
     $('img.lazy').lazy();
     var popDisplayed = getCookie('popDisplayed');
-    if(popDisplayed !== '1') {
+    if (popDisplayed !== '1') {
         $('.js-modal.subcribe-email').delay(600).fadeIn(600, () => {});
         $('.btn-close').click(() => {
             $('.js-modal-subcribe-email').addClass('d-none');
@@ -45,17 +45,19 @@ $(document).ready(function() {
     });
 });
 
-function setCookie(cookieName, cookieValue, exdays) {
+function setCookie(cookieName, cookieValue, exdays)
+{
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires="+ d.toUTCString();
     document.cookie = cookieName + "=" + cookieValue + "; " + expires;
 }
 
-function getCookie(cookieName) {
+function getCookie(cookieName)
+{
     var name = cookieName + "=";
     var ca = document.cookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
+    for (var i = 0; i <ca.length; i++) {
         var c = ca[i];
         while (c.charAt(0)==' ') {
             c = c.substring(1);
